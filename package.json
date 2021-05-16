@@ -12,7 +12,7 @@
     "gsap": "^3.6.1",
     "hydro-js": "^1.4.0",
     "progressive-picture": "^2.0.2",
-    "router-dom": "^1.1.5"
+    "router-dom": "^1.1.6"
   },
   "devDependencies": {
     "glob": "^7.1.7",
