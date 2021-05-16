@@ -25,7 +25,6 @@ body picture > img {
   max-width: 100%;
   height: auto;
   filter: blur(0);
-  transition: filter 0.7s ease-in;
 }
 body picture > img[data-src] {
   filter: blur(3px);
@@ -34,7 +33,7 @@ body picture > img.img-progressive {
   width: auto;
 }
 body picture > img {
-  transition: filter 0.3s ease-in;
+  transition: filter 0.4s ease;
 }
 [data-outlet] {
   max-width: 1000px;
@@ -517,6 +516,8 @@ header:not(.group) .profile-photo-secondary {
   width: 100vw;
   height: 300px;
   transition: all 0.2s ease;
+  will-change: transform, opacity;
+  contain: strict;
 }
 .header-img-transition {
   opacity: 0.6;

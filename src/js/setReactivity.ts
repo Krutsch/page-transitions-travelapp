@@ -69,7 +69,6 @@ setReactivity(document.body, {
         : target.closest("div");
     const profileDiv = $(".profile-photo") as HTMLDivElement;
 
-    console.log(div);
     const index = [...div.classList.values()]
       .filter((className) => /profile-\d/.test(className))
       .pop()

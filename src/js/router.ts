@@ -8,12 +8,11 @@ const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(true)
   .firstChild;
 hydro.addPlace = addPlace;
 setReactivity(plusIcon as Node);
-let preloadedGroupImages = false;
 
 new Router([
   {
     path: "/",
-    templateUrl: "./pages/home.html",
+    templateUrl: "/pages/home.html",
     leave() {
       $(".header-img")!.classList.add("header-img-transition");
       return hideOrShow(true);
@@ -35,7 +34,7 @@ new Router([
   },
   {
     path: "/place",
-    templateUrl: "./pages/place.html",
+    templateUrl: "/pages/place.html",
     leave() {
       $(".header-img")!.classList.add("header-img-transition");
       return hideOrShow(true);
@@ -55,7 +54,7 @@ new Router([
   },
   {
     path: "/group",
-    templateUrl: "./pages/group.html",
+    templateUrl: "/pages/group.html",
     leave() {
       ($(".profile-photo") as HTMLDivElement).style.transform = "";
       $(".header-img")!.classList.add("header-img-transition");
