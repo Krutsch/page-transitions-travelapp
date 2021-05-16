@@ -21,6 +21,19 @@ body {
   color: transparent;
 }
 body picture > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  filter: blur(0);
+  transition: filter 0.7s ease-in;
+}
+body picture > img[data-src] {
+  filter: blur(3px);
+}
+body picture > img.img-progressive {
+  width: auto;
+}
+body picture > img {
   transition: filter 0.3s ease-in;
 }
 [data-outlet] {
