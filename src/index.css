@@ -28,6 +28,7 @@ body picture > img {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
+  will-change: opacity;
 }
 header {
   width: 100vw;

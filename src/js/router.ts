@@ -23,7 +23,7 @@ new Router([
         $(".profile-name")!.textContent = hydro.person.fullname;
       }
       $$(".nav-wrapper a")[0].classList.add("active-link");
-      render(mailIcon, ".side-icon svg", false);
+      render(mailIcon, ".side-icon svg");
     },
     afterEnter({ from }) {
       if (from !== "/") {
@@ -41,9 +41,11 @@ new Router([
       return hideOrShow(true);
     },
     beforeEnter() {
-      $(".profile-name")!.textContent = hydro.person.fullname;
+      if (hydro.person?.fullname) {
+        $(".profile-name")!.textContent = hydro.person.fullname;
+      }
       $$(".nav-wrapper a")[1].classList.add("active-link");
-      render(plusIcon, ".side-icon svg", false);
+      render(plusIcon, ".side-icon svg");
     },
     afterEnter() {
       //@ts-ignore
@@ -60,23 +62,9 @@ new Router([
       return hideOrShow(true);
     },
     beforeEnter() {
-      if (!preloadedGroupImages) {
-        preloadedGroupImages = true;
-        document.head.append(
-          html`<link rel="preload" href="/assets/hawaii1.jpg" as="image" /><link
-              rel="preload"
-              href="/assets/hawaii2.jpg"
-              as="image"
-            /><link rel="preload" href="/assets/hawaii3.jpg" as="image" /><link
-              rel="preload"
-              href="/assets/hawaii4.jpg"
-              as="image"
-            /><link rel="preload" href="/assets/hawaii5.jpg" as="image" />`
-        );
-      }
       $(".profile-name")!.textContent = "Honolulu";
       $$(".nav-wrapper a")[2].classList.add("active-link");
-      render(plusIcon, ".side-icon svg", false);
+      render(plusIcon, ".side-icon svg");
     },
     afterEnter() {
       //@ts-ignore
