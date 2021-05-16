@@ -1,4 +1,13 @@
 /* Preset */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 body {
   background: white;
   color: #333;
@@ -11,14 +20,14 @@ body {
   line-height: 1.2;
   overflow-x: hidden;
 }
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(/assets/header1.jpg) url(/assets/header2.jpg)
+    url(/assets/header3.jpg);
 }
 body picture > img {
   display: block;
