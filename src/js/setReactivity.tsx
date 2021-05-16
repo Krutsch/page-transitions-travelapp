@@ -1,5 +1,5 @@
 import "progressive-picture";
-import { setReactivity, $, hydro, render, html } from "hydro-js";
+import { setReactivity, $, hydro, render, h } from "hydro-js";
 import { openMenu, closeMenu } from "./animation.js";
 
 const headerImg = $(".header-img")!;
@@ -63,6 +63,7 @@ setReactivity(document.body, {
     headerImg.classList.remove("header-img-transition");
   },
   selectProfile: ({ target }: any) => {
+    if (location.pathname !== "/group") return;
     const div =
       target.parentNode.localName === "div"
         ? target.parentNode
@@ -100,12 +101,20 @@ setReactivity(document.body, {
 });
 
 // Show the content
-render(html`<style>
-  *,
-  *:before,
-  *:after {
-    color: inherit;
-    background-clip: initial;
-    -webkit-background-clip: initial;
+const style = <style></style>;
+style.textContent = `*,
+*:before,
+*:after {
+  color: inherit;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+}`;
+render(style);
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [key: string]: HTMLElement & any;
+    }
   }
-</style>`);
+}
