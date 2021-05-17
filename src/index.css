@@ -322,6 +322,7 @@ aside.sidebar {
   z-index: 10000;
 }
 .hide-menu {
+  pointer-events: none;
   transform: scale(0.9);
   opacity: 0;
 }
