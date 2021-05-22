@@ -2,10 +2,12 @@ import Router from "router-dom";
 import { $$, $, render, hydro, setReactivity } from "hydro-js";
 import { addPlace } from "./animation.js";
 
-const mailIcon = ($("#mailIcon") as HTMLTemplateElement).content.cloneNode(true)
-  .firstChild;
-const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(true)
-  .firstChild;
+const mailIcon = ($("#mailIcon") as HTMLTemplateElement).content.cloneNode(
+  true
+).firstChild;
+const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(
+  true
+).firstChild;
 hydro.addPlace = addPlace;
 setReactivity(plusIcon as Node);
 
@@ -24,12 +26,10 @@ new Router([
       $$(".nav-wrapper a")[0].classList.add("active-link");
       render(mailIcon, ".side-icon svg");
     },
-    afterEnter({ from }) {
-      if (from !== "/") {
-        //@ts-ignore
-        ($("header") as Element).classList = ["index"];
-        return hideOrShow(false);
-      }
+    afterEnter() {
+      //@ts-ignore
+      ($("header") as Element).classList = ["index"];
+      return hideOrShow(false);
     },
   },
   {
@@ -75,6 +75,9 @@ new Router([
 
 addEventListener("beforeRouting", () => {
   $(".active-link")!.classList.remove("active-link");
+});
+addEventListener("afterRouting", () => {
+  $("footer")!.hidden = false;
 });
 
 function hideOrShow(hide: boolean) {

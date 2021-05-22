@@ -463,7 +463,7 @@ header:not(.group) .profile-photo-secondary {
 .group .profile-1,
 .group .profile-2,
 .group .profile-3 {
-  transition: 0.4s all ease-in-out;
+  transition: all 0.4s ease-in-out;
   opacity: 1;
 }
 .group .profile-photo img:hover,
@@ -525,7 +525,7 @@ header:not(.group) .profile-photo-secondary {
   position: absolute;
   width: 100vw;
   height: 300px;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
   will-change: transform, opacity;
   contain: strict;
 }
