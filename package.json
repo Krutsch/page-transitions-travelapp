@@ -2,17 +2,18 @@
   "type": "module",
   "scripts": {
     "predev": "npm run prebuild",
-    "dev": "html-bundle --hmr",
+    "dev": "html-bundle --hmr --secure",
     "prebuild": "node utils/prebuild.js",
-    "build": "html-bundle --critical",
-    "serve": "html-bundle --serveOnly",
+    "build": "html-bundle --critical --csp",
+    "serve": "html-bundle --serveOnly --secure",
+    "preview": "npm run build && npm run serve",
     "update": "npx npm-check-updates -u && npm i && npm outdated"
   },
   "dependencies": {
     "gsap": "^3.6.1",
-    "hydro-js": "^1.4.0",
+    "hydro-js": "^1.4.1",
     "progressive-picture": "^2.0.2",
-    "router-dom": "^1.1.7"
+    "router-dom": "^2.1.1"
   },
   "devDependencies": {
     "glob": "^7.1.7",

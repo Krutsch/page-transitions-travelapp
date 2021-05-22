@@ -13,6 +13,7 @@ glob("src/**/*.!(js|ts|html|css)", {}, (err, files) => {
 
   copyFiles(["src/_headers", "src/_redirects"]);
   copyFiles(files.filter((f) => f.endsWith(".ico")));
+  copyFiles(files.filter((f) => f.endsWith(".woff2")));
   jpgHandler(files.filter((f) => f.endsWith(".jpg")));
   pngHandler(files.filter((f) => f.endsWith(".png")));
 

@@ -1,5 +1,5 @@
 import Router from "router-dom";
-import { $$, $, render, hydro, setReactivity, html } from "hydro-js";
+import { $$, $, render, hydro, setReactivity } from "hydro-js";
 import { addPlace } from "./animation.js";
 
 const mailIcon = ($("#mailIcon") as HTMLTemplateElement).content.cloneNode(true)
@@ -73,7 +73,7 @@ new Router([
   },
 ]);
 
-addEventListener("popstate", () => {
+addEventListener("beforeRouting", () => {
   $(".active-link")!.classList.remove("active-link");
 });
 
@@ -81,7 +81,7 @@ function hideOrShow(hide: boolean) {
   return $("[data-outlet]")!.animate(
     [{ opacity: hide ? "1" : "0" }, { opacity: hide ? "0" : "1" }],
     {
-      duration: 90,
+      duration: 190,
       fill: "forwards",
       easing: "ease-in",
     }

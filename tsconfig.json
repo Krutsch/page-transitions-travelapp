@@ -7,8 +7,6 @@
     "lib": ["esnext", "DOM", "DOM.Iterable", "WebWorker"],
     "checkJs": true,
     "strict": true,
-    "jsx": "preserve",
-    "jsxFactory": "h",
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"],
     "esModuleInterop": true,
