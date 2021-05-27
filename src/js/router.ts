@@ -74,7 +74,7 @@ new Router([
 ]);
 
 addEventListener("beforeRouting", () => {
-  $(".active-link")!.classList.remove("active-link");
+  $(".active-link")?.classList.remove("active-link");
 });
 addEventListener("afterRouting", () => {
   $("footer")!.hidden = false;
