@@ -79,7 +79,6 @@ function setBindings() {
 }
 
 // Listener for HMR
-//@ts-expect-error
 if (process.env.NODE_ENV === "production") {
   // Show Content after setting binding
   render(html`<style>

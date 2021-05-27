@@ -9,8 +9,7 @@ const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(
   true
 ).firstChild;
 hydro.addPlace = addPlace;
-setReactivity(plusIcon as Node);
-
+setReactivity(plusIcon as Element);
 new Router([
   {
     path: "/",
