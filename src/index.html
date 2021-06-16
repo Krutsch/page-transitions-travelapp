@@ -65,9 +65,17 @@
       <div class="nav-wrapper">
         <nav>
           <ul class="hidden sm:block">
-            <a href="/"><li>{{person.firstname}}'s Home</li></a>
-            <a href="/place"><li>{{person.firstname}}'s Places</li></a>
-            <a href="/group"><li>{{person.firstname}}'s Group Trips</li></a>
+            <a href="/"
+              ><li class="start-invisible">{{person.firstname}}'s Home</li></a
+            >
+            <a href="/place"
+              ><li class="start-invisible">{{person.firstname}}'s Places</li></a
+            >
+            <a href="/group"
+              ><li class="start-invisible">
+                {{person.firstname}}'s Group Trips
+              </li></a
+            >
           </ul>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,9 +98,14 @@
           </svg>
 
           <div class="menudrawer hide-menu">
-            <a href="/">{{person.firstname}}'s Home</a><br />
-            <a href="/place">{{person.firstname}}'s Places</a><br />
-            <a href="/group">{{person.firstname}}'s Group Trips</a>
+            <a href="/" class="start-invisible">{{person.firstname}}'s Home</a
+            ><br />
+            <a href="/place" class="start-invisible"
+              >{{person.firstname}}'s Places</a
+            ><br />
+            <a href="/group" class="start-invisible"
+              >{{person.firstname}}'s Group Trips</a
+            >
           </div>
 
           <div class="profile-photo profile-0" onclick="selectProfile">
@@ -164,7 +177,7 @@
             <span>Follow</span>
           </button>
           <h2 class="profile-name">
-            <span>{{person.fullname}}</span>
+            <span class="start-invisible">{{person.fullname}}</span>
           </h2>
           <div class="side-icon">
             <svg
@@ -239,11 +252,13 @@
             </div>
             <div>
               <span class="desc">Followers</span><br />
-              <span class="lg followers">{{person.followers}}</span>
+              <span class="lg followers start-invisible"
+                >{{person.followers}}</span
+              >
             </div>
             <div>
               <span class="desc">Following</span><br />
-              <span class="lg">{{person.following}}</span>
+              <span class="lg start-invisible">{{person.following}}</span>
             </div>
           </div>
         </nav>

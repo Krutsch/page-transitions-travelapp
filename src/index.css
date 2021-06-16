@@ -25,12 +25,6 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
-  *,
-  *::before,
-  *::after {
-    @apply bg-clip-text text-transparent;
-  }
-
   body {
     @apply text-gray-700 leading-tight overflow-x-hidden;
     font-family: "Josefin Sans", serif;
@@ -176,7 +170,8 @@
   }
 
   .follow {
-    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-[9.375rem] absolute block top-80 backface left-[13.75rem] bg-white;
+    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-[9.375rem] absolute block top-80 backface left-[13.75rem];
+    background-color: orangered;
     font-family: Arial;
     transform: translateZ(0);
     transition: all 0.4s ease-out;
@@ -330,6 +325,10 @@
   }
 
   /* Utils */
+
+  .start-invisible {
+    @apply invisible;
+  }
 
   .lg {
     @apply text-[2.5rem];

@@ -1,5 +1,5 @@
 import "progressive-picture";
-import { setReactivity, $, $$, hydro, render, html } from "hydro-js";
+import { setReactivity, $, $$, hydro } from "hydro-js";
 import { openMenu, closeMenu } from "./animation.js";
 
 const headerImg = $(".header-img")!;
@@ -77,27 +77,19 @@ function setBindings() {
   });
 }
 
-const styles = html`<style>
-  *,
-  *:before,
-  *:after {
-    color: inherit;
-    background-clip: initial;
-    -webkit-background-clip: initial;
-  }
-  .follow {
-    background-color: orangered;
-  }
-</style>`;
+const startInvisible = "start-invisible";
+$$(`.${startInvisible}`).forEach((elem) => {
+  elem.classList.remove(startInvisible);
+});
 
 // Listener for HMR
-if (process.env.NODE_ENV === "production") {
-  // Show Content after setting binding
-  render(styles);
-} else {
+if (process.env.NODE_ENV !== "production") {
   addEventListener("afterRouting", () => {
     if (document.body.textContent!.includes("{{")) setBindings();
-    if (!$("body > style")) render(styles);
+    if (location.pathname === "/") $("header")!.classList.add("index");
+    $$(`.${startInvisible}`).forEach((elem) => {
+      elem.classList.remove(startInvisible);
+    });
 
     $$("picture > img").forEach((img) => {
       const src = (img as HTMLImageElement).dataset.src;

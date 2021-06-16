@@ -10,8 +10,6 @@ const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(
 ).firstChild;
 setReactivity(plusIcon as Element, { addPlace });
 
-const header = $("header")!;
-
 new Router([
   {
     path: "/",
@@ -27,7 +25,7 @@ new Router([
       render(mailIcon, ".side-icon svg");
     },
     afterEnter() {
-      header.className = "index";
+      $("header")!.className = "index";
       return hideOrShow(false);
     },
   },
@@ -45,7 +43,7 @@ new Router([
       render(plusIcon, ".side-icon svg");
     },
     afterEnter() {
-      header.className = "place";
+      $("header")!.className = "place";
       return hideOrShow(false);
     },
   },
@@ -62,7 +60,7 @@ new Router([
       render(plusIcon, ".side-icon svg");
     },
     afterEnter() {
-      header.className = "group";
+      $("header")!.className = "group";
       return hideOrShow(false);
     },
   },
