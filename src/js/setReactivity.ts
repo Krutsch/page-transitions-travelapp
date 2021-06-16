@@ -85,6 +85,9 @@ const styles = html`<style>
     background-clip: initial;
     -webkit-background-clip: initial;
   }
+  .follow {
+    background-color: orangered;
+  }
 </style>`;
 
 // Listener for HMR

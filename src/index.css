@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/josefinsans.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/playfairdisplay.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
   *,
   *::before,
   *::after {
@@ -17,8 +39,8 @@
     &::after {
       @apply absolute w-0 h-0 overflow-hidden;
       z-index: -1;
-      content: url(/assets/header1.jpg) url(/assets/header2.jpg)
-        url(/assets/header3.jpg);
+      content: url("/assets/header1.jpg") url("/assets/header2.jpg")
+        url("/assets/header3.jpg");
     }
   }
 
@@ -154,9 +176,8 @@
   }
 
   .follow {
-    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-[9.375rem] absolute block top-80 backface left-[13.75rem];
+    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-[9.375rem] absolute block top-80 backface left-[13.75rem] bg-white;
     font-family: Arial;
-    background-color: orangered;
     transform: translateZ(0);
     transition: all 0.4s ease-out;
   }
@@ -212,6 +233,10 @@
 
   .index .header-img {
     background: url("/assets/header1.jpg") center center / cover;
+  }
+
+  .index .profile-photo {
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
   /* Place */
@@ -335,8 +360,8 @@
   }
 }
 
-/* Too dynamic for TW 😅 */
-.active-follow {
+/* TW is purging them in the layer, because there are no initially set */
+.follow.active-follow {
   background: rgb(5, 134, 106);
 }
 .header-img-transition {
