@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply text-gray-700 leading-tight;
+    @apply text-gray-700 leading-tight overflow-x-hidden;
     font-family: "Josefin Sans", serif;
     word-spacing: 1px;
 
