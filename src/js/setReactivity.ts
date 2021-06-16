@@ -1,5 +1,5 @@
-import { setReactivity, $, $$, hydro, render, html } from "hydro-js";
 import "progressive-picture";
+import { setReactivity, $, $$, hydro, render, html } from "hydro-js";
 import { openMenu, closeMenu } from "./animation.js";
 
 const headerImg = $(".header-img")!;
@@ -13,7 +13,7 @@ setBindings();
 
 function setBindings() {
   setReactivity(document.body, {
-    toggle: () => {
+    toggle() {
       followElem.classList.toggle("active-follow");
       const willFollow = span.textContent === "Follow";
       if (willFollow) {
@@ -24,21 +24,20 @@ function setBindings() {
         hydro.person.followers -= 1;
       }
     },
-    toggleMenu: () => {
+    toggleMenu() {
+      menuDrawer.classList.toggle("hide-menu");
       if (isOpen) {
         isOpen = false;
         closeMenu();
-        menuDrawer.classList.add("hide-menu");
       } else {
         isOpen = true;
-        menuDrawer.classList.remove("hide-menu");
         openMenu();
       }
     },
-    transitionend: () => {
+    transitionend() {
       headerImg.classList.remove("header-img-transition");
     },
-    selectProfile: ({ target }: any) => {
+    selectProfile({ target }: any) {
       if (location.pathname !== "/group") return;
 
       const div =
@@ -59,7 +58,7 @@ function setBindings() {
         .pop();
       const multIndex = Number(index) || Number(indexReplacment);
 
-      const newPerson = hydro.persons[index];
+      const newPerson = { ...hydro.persons[index] };
       hydro.person.fullname = newPerson.fullname;
       hydro.person.firstname = newPerson.firstname;
       hydro.person.followers = newPerson.followers;
@@ -78,31 +77,24 @@ function setBindings() {
   });
 }
 
+const styles = html`<style>
+  *,
+  *:before,
+  *:after {
+    color: inherit;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+  }
+</style>`;
+
 // Listener for HMR
 if (process.env.NODE_ENV === "production") {
   // Show Content after setting binding
-  render(html`<style>
-    *,
-    *:before,
-    *:after {
-      color: inherit;
-      background-clip: initial;
-      -webkit-background-clip: initial;
-    }
-  </style>`);
+  render(styles);
 } else {
   addEventListener("afterRouting", () => {
-    $("body")!.textContent!.includes("{{") && setBindings();
-    !$("body > style") &&
-      render(html`<style>
-        *,
-        *:before,
-        *:after {
-          color: inherit;
-          background-clip: initial;
-          -webkit-background-clip: initial;
-        }
-      </style>`);
+    if (document.body.textContent!.includes("{{")) setBindings();
+    if (!$("body > style")) render(styles);
 
     $$("picture > img").forEach((img) => {
       const src = (img as HTMLImageElement).dataset.src;

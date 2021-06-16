@@ -8,14 +8,15 @@ const mailIcon = ($("#mailIcon") as HTMLTemplateElement).content.cloneNode(
 const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(
   true
 ).firstChild;
-hydro.addPlace = addPlace;
-setReactivity(plusIcon as Element);
+setReactivity(plusIcon as Element, { addPlace });
+
+const header = $("header")!;
+
 new Router([
   {
     path: "/",
     templateUrl: "/pages/home.html",
     leave() {
-      $(".header-img")!.classList.add("header-img-transition");
       return hideOrShow(true);
     },
     beforeEnter() {
@@ -26,8 +27,7 @@ new Router([
       render(mailIcon, ".side-icon svg");
     },
     afterEnter() {
-      //@ts-ignore
-      ($("header") as Element).classList = ["index"];
+      header.className = "index";
       return hideOrShow(false);
     },
   },
@@ -35,7 +35,6 @@ new Router([
     path: "/place",
     templateUrl: "/pages/place.html",
     leave() {
-      $(".header-img")!.classList.add("header-img-transition");
       return hideOrShow(true);
     },
     beforeEnter() {
@@ -46,8 +45,7 @@ new Router([
       render(plusIcon, ".side-icon svg");
     },
     afterEnter() {
-      //@ts-ignore
-      $("header").classList = ["place"];
+      header.className = "place";
       return hideOrShow(false);
     },
   },
@@ -56,7 +54,6 @@ new Router([
     templateUrl: "/pages/group.html",
     leave() {
       ($(".profile-photo") as HTMLDivElement).style.transform = "";
-      $(".header-img")!.classList.add("header-img-transition");
       return hideOrShow(true);
     },
     beforeEnter() {
@@ -65,18 +62,20 @@ new Router([
       render(plusIcon, ".side-icon svg");
     },
     afterEnter() {
-      //@ts-ignore
-      $("header").classList = ["group"];
+      header.className = "group";
       return hideOrShow(false);
     },
   },
 ]);
 
+const headerImg = $(".header-img")!;
 addEventListener("beforeRouting", () => {
   $(".active-link")?.classList.remove("active-link");
+  headerImg.classList.add("header-img-transition");
 });
+const footer = $("footer")!;
 addEventListener("afterRouting", () => {
-  $("footer")!.hidden = false;
+  if (footer.hidden) footer.hidden = false;
 });
 
 function hideOrShow(hide: boolean) {

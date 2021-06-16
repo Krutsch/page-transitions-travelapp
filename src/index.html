@@ -39,8 +39,8 @@
       ];
       hydro.person = { ...hydro.persons[0] };
     </script>
-    <script type="module" async src="js/router.js"></script>
-    <script type="module" async src="js/setReactivity.js"></script>
+    <script type="module" src="js/router.js"></script>
+    <script type="module" src="js/setReactivity.js"></script>
     <style>
       @font-face {
         font-family: "Playfair Display";
@@ -67,12 +67,12 @@
   </head>
   <body>
     <header>
-      <div class="bk-img">
+      <div class="absolute w-screen h-[18.75rem] overflow-hidden top-0">
         <div class="header-img" ontransitionend="transitionend"></div>
       </div>
       <div class="nav-wrapper">
         <nav>
-          <ul>
+          <ul class="hidden sm:block">
             <a href="/"><li>{{person.firstname}}'s Home</li></a>
             <a href="/place"><li>{{person.firstname}}'s Places</li></a>
             <a href="/group"><li>{{person.firstname}}'s Group Trips</li></a>
@@ -84,7 +84,7 @@
             viewBox="0 0 24 24"
             aria-labelledby="menu"
             role="presentation"
-            class="menu"
+            class="absolute right-0 top-2 cursor-pointer"
             onclick="toggleMenu"
           >
             <title id="menu" lang="en">menu icon</title>
@@ -191,8 +191,8 @@
               </g>
             </svg>
           </div>
-          <div class="saveinfo">Saved!</div>
-          <aside>
+          <div class="save-info">Saved!</div>
+          <aside class="hidden sm:block">
             <p class="map-pin">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,9 @@
               32 days traveling
             </p>
           </aside>
-          <div class="stats">
+          <div
+            class="stats hidden gap-5 sm:flex sm:justify-end lg:justify-between"
+          >
             <div class="bio">
               <p>
                 Had a brief careerwith jack-in-the-boxes in Phoenix, AZ. Spent
@@ -256,7 +258,7 @@
       </div>
     </header>
 
-    <div data-outlet></div>
+    <main class="px-5 flex-col sm:flex-row" data-outlet></main>
 
     <footer hidden>
       Clone made by
@@ -299,7 +301,7 @@
           transform-origin: 50% 50% 0px;
           transform: matrix(1, 0, 0, 1, 0, 0);
         "
-        onclick="{{addPlace}}"
+        onclick="addPlace"
       >
         <title id="plus" lang="en" data-v-2ed170f2="">plus icon</title>
         <g fill="currentColor" data-v-2ed170f2="">

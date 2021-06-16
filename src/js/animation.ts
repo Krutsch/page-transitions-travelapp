@@ -39,7 +39,7 @@ function addAnimation() {
     "start"
   );
   tl.fromTo(
-    ".saveinfo",
+    ".save-info",
     0.5,
     {
       autoAlpha: 0,
@@ -51,7 +51,7 @@ function addAnimation() {
     "start"
   );
   tl.to(
-    ".saveinfo",
+    ".save-info",
     0.4,
     {
       autoAlpha: 0,
