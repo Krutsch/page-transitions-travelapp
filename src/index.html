@@ -30,7 +30,7 @@
     <script type="module">
       import { hydro } from "hydro-js";
 
-      navigator.serviceWorker.register("sw.js");
+      if (navigator.serviceWorker) navigator.serviceWorker.register("sw.js");
       hydro.persons = [
         {
           fullname: "Sophia Gonzalez",

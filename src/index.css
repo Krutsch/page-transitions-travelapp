@@ -39,7 +39,7 @@
   }
 
   picture > img {
-    @apply block w-full h-auto filter blur-0;
+    @apply block w-full h-auto blur-0;
     transition: filter 0.4s ease;
 
     &[data-src] {
@@ -175,6 +175,7 @@
     font-family: Arial;
     transform: translateZ(0);
     transition: all 0.4s ease-out;
+    will-change: transform;
   }
 
   .save-info {
@@ -185,6 +186,7 @@
     @apply absolute backface block text-4xl left-0 top-[22.1875rem];
     transition: all 0.4s ease-out;
     transform: translateZ(0);
+    will-change: transform;
   }
 
   .side-icon {
