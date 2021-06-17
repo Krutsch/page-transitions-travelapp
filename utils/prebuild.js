@@ -1,6 +1,13 @@
-import { mkdirSync, copyFileSync, rmSync } from "fs";
+import {
+  mkdirSync,
+  copyFileSync,
+  rmSync,
+  writeFileSync,
+  readFileSync,
+} from "fs";
 import glob from "glob";
 import sharp from "sharp";
+import minifyJSON from "node-json-minify";
 
 const SOURCE_FOLDER = "src";
 const BUILD_FOLDER = "build";
@@ -14,14 +21,25 @@ glob("src/**/*.!(js|ts|html|css)", {}, (err, files) => {
   copyFiles(["src/_headers", "src/_redirects"]);
   copyFiles(files.filter((f) => f.endsWith(".ico")));
   copyFiles(files.filter((f) => f.endsWith(".woff2")));
+  jsonHandler(files.filter((f) => f.endsWith(".json")));
   jpgHandler(files.filter((f) => f.endsWith(".jpg")));
-  pngHandler(files.filter((f) => f.endsWith(".png")));
+  pngHandler(files.filter((f) => f.endsWith(".png") && !f.includes("icon")));
+  copyFiles(files.filter((f) => f.endsWith(".png") && f.includes("icon")));
 
   console.log(`🛠️  Pre-build finished.`);
 });
 
 function copyFiles(files) {
   files.forEach(copyFile);
+}
+
+function jsonHandler(files) {
+  files.forEach((file) =>
+    writeFileSync(
+      getBuildPath(file),
+      minifyJSON(readFileSync(file, { encoding: "utf-8" }))
+    )
+  );
 }
 
 function copyFile(file) {

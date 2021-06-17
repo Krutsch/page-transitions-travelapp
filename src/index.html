@@ -23,8 +23,14 @@
       crossorigin
     />
 
+    <link rel="apple-touch-icon" href="assets/icon192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#24272d" />
+
     <script type="module">
       import { hydro } from "hydro-js";
+
+      navigator.serviceWorker.register("sw.js");
       hydro.persons = [
         {
           fullname: "Sophia Gonzalez",

@@ -1,0 +1,43 @@
+{
+  "name": "page-transitions-travelapp",
+  "short_name": "page-transitions-travelapp",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000",
+  "theme_color": "#24272d",
+  "description": "page-transitions-travelapp",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
