@@ -14,7 +14,7 @@
     "hydro-js": "^1.4.3",
     "progressive-picture": "^2.0.2",
     "router-dom": "^2.2.1",
-    "tailwindcss": "^2.2.0",
+    "tailwindcss": "^2.2.2",
     "workbox-cacheable-response": "^6.1.5",
     "workbox-expiration": "^6.1.5",
     "workbox-routing": "^6.1.5",
