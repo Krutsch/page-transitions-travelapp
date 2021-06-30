@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Description" content="page-transitions-travelapp" />
     <title>page-transitions-travelapp</title>
+    <link rel="preconnect" href="https://unpkg.com/" />
     <link rel="preload" href="/assets/header1.jpg" as="image" />
     <link rel="preload" href="/assets/header2.jpg" as="image" />
     <link rel="preload" href="/assets/header3.jpg" as="image" />
@@ -26,6 +27,11 @@
     <link rel="apple-touch-icon" href="assets/icon192.png" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#24272d" />
+    <script
+      type="module"
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+      async
+    ></script>
 
     <script type="module">
       import { hydro } from "hydro-js";
@@ -59,8 +65,8 @@
       ];
       hydro.person = { ...hydro.persons[0] };
     </script>
-    <script type="module" src="js/router.js"></script>
-    <script type="module" src="js/setReactivity.js"></script>
+    <script type="module" src="js/router.js" async></script>
+    <script type="module" src="js/setReactivity.js" async></script>
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
