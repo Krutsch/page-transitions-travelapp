@@ -46,17 +46,7 @@ function setBindings() {
           : target.closest("div");
       const profileDiv = $(".profile-photo") as HTMLDivElement;
 
-      const index = [...div.classList.values()]
-        .filter((className) => /profile-\d/.test(className))
-        .pop()
-        .split("profile-")
-        .pop();
-      const indexReplacment = [...profileDiv.classList.values()]
-        .filter((className) => /profile-\d/.test(className))
-        .pop()!
-        .split("profile-")
-        .pop();
-      const multIndex = Number(index) || Number(indexReplacment);
+      const index = Number(div.dataset.pos);
 
       const newPerson = { ...hydro.persons[index] };
       hydro.person.fullname = newPerson.fullname;
@@ -67,12 +57,14 @@ function setBindings() {
       profileDiv.classList.remove("profile-photo");
       profileDiv.classList.add("profile-photo-secondary");
       profileDiv.style.transform = `perspective(1px) translate3d(${
-        -70 + multIndex * 55
+        -70 + index * 55
       }px, -70px, 0) scale(0.25)`;
+      profileDiv.dataset.pos = String(index);
 
       div.classList.remove("profile-photo-secondary");
       div.classList.add("profile-photo");
       div.style.transform = `perspective(1px) translate3d(-70px, -70px, 0) scale(0.25)`;
+      div.dataset.pos = "0";
     },
   });
 }
