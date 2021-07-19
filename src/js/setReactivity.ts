@@ -47,8 +47,13 @@ function setBindings() {
       const profileDiv = $(".profile-photo") as HTMLDivElement;
 
       const index = Number(div.dataset.pos);
+      const pIdx = [...div.classList.values()]
+        .filter((className) => /profile-\d/.test(className))
+        .pop()
+        .split("profile-")
+        .pop();
 
-      const newPerson = { ...hydro.persons[index] };
+      const newPerson = { ...hydro.persons[pIdx] };
       hydro.person.fullname = newPerson.fullname;
       hydro.person.firstname = newPerson.firstname;
       hydro.person.followers = newPerson.followers;
