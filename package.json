@@ -18,7 +18,7 @@
     "workbox-cacheable-response": "^6.2.3",
     "workbox-expiration": "^6.2.3",
     "workbox-routing": "^6.2.3",
-    "workbox-strategies": "^6.2.2"
+    "workbox-strategies": "^6.2.3"
   },
   "devDependencies": {
     "cssnano": "^5.0.7",
