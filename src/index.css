@@ -49,6 +49,7 @@
   [data-outlet] {
     @apply content-between flex my-0 mx-auto max-w-[64rem] gap-[5%];
     will-change: opacity;
+    min-height: calc(100vh - 300px - 44px);
   }
 
   header {
@@ -97,7 +98,7 @@
   }
 
   footer {
-    @apply p-2.5 bg-black text-white text-center mt-7 leading-6;
+    @apply p-2.5 bg-black text-white text-center leading-6;
     letter-spacing: 0.03em;
 
     & a {
