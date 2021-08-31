@@ -59,7 +59,9 @@ new Router(
       path: "/group",
       templateUrl: "/pages/group.html",
       leave() {
-        ($(".profile-photo") as HTMLDivElement).style.transform = "";
+        ($(".profile-photo") as HTMLDivElement).style.removeProperty(
+          "transform"
+        );
         return hideOrShow(true);
       },
       beforeEnter() {
