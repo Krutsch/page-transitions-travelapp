@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === "production";
+const tailwindcss = require("./tailwind.config.cjs");
 
 module.exports = {
   plugins: {
@@ -8,19 +9,7 @@ module.exports = {
         "nesting-rules": true,
       },
     },
-    tailwindcss: {
-      mode: "jit",
-      purge: {
-        enabled: isProduction,
-        content: ["./src/**/*.html", "./src/**/.css,", "./src/**/.ts"],
-      },
-      darkMode: false,
-      theme: {
-        extend: {},
-      },
-      variants: {},
-      plugins: [],
-    },
+    tailwindcss,
     autoprefixer: {},
     ...(isProduction
       ? {
