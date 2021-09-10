@@ -16,7 +16,7 @@
     "router-dom": "^2.2.3",
     "tailwindcss": "^2.2.14",
     "workbox-cacheable-response": "^6.2.4",
-    "workbox-expiration": "^6.2.4",
+    "workbox-expiration": "^6.3.0",
     "workbox-routing": "^6.2.4",
     "workbox-strategies": "^6.2.4"
   },
