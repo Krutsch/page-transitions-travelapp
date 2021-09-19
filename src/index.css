@@ -171,12 +171,16 @@
   }
 
   .follow {
-    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-[9.375rem] absolute block top-80 backface left-[13.75rem];
+    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-max absolute block top-80 backface left-[13.75rem] sm:w-[9.375rem];
     background-color: orangered;
     font-family: Arial;
     transform: translateZ(0);
     transition: all 0.4s ease-out;
     will-change: transform;
+
+    &.active-follow {
+      background: rgb(5, 134, 106);
+    }
   }
 
   .save-info {
@@ -238,6 +242,12 @@
   }
 
   /* Place */
+
+  .place ~ [data-outlet] .main-img {
+    @apply w-full h-60;
+    background: url("/assets/header1.jpg") center center / cover;
+  }
+
   .place .header-img {
     background: url("/assets/header2.jpg") center center / cover;
   }
@@ -329,6 +339,24 @@
 
   /* Utils */
 
+  :not(.index) ~ [data-outlet] aside {
+    background-color: #eee;
+
+    & hr {
+      border-color: #ccc;
+    }
+  }
+
+  .header-img-transition {
+    opacity: 0.6;
+    transform: scale(1.05) translateZ(0);
+  }
+
+  .active-link {
+    /* CLS on Firefox when using higher font-weight */
+    text-shadow: 1px 0 0 currentColor;
+  }
+
   .start-invisible {
     @apply invisible;
   }
@@ -359,29 +387,5 @@
       @apply px-3.5 pt-3.5 pb-3;
       transform: translate3d(0, -65px, 0);
     }
-  }
-}
-
-/* TW is purging them in the layer, because there are no initially set */
-.follow.active-follow {
-  background: rgb(5, 134, 106);
-}
-.header-img-transition {
-  opacity: 0.6;
-  transform: scale(1.05) translateZ(0);
-}
-.active-link {
-  /* CLS on Firefox when using higher font-weight */
-  text-shadow: 1px 0 0 currentColor;
-}
-.place ~ [data-outlet] .main-img {
-  @apply w-full h-60;
-  background: url("/assets/header1.jpg") center center / cover;
-}
-:not(.index) ~ [data-outlet] aside {
-  background-color: #eee;
-
-  & hr {
-    border-color: #ccc;
   }
 }

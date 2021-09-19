@@ -37,6 +37,7 @@
       import { hydro } from "hydro-js";
 
       if (navigator.serviceWorker) navigator.serviceWorker.register("sw.js");
+
       hydro.persons = [
         {
           fullname: "Sophia Gonzalez",
@@ -65,8 +66,8 @@
       ];
       hydro.person = { ...hydro.persons[0] };
     </script>
-    <script type="module" src="js/router.js" async></script>
-    <script type="module" src="js/setReactivity.js" async></script>
+    <script type="module" src="js/router.js"></script>
+    <script type="module" src="js/setReactivity.js"></script>
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
