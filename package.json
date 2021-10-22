@@ -28,7 +28,7 @@
     "node-json-minify": "^1.0.0",
     "postcss": "^8.3.10",
     "postcss-preset-env": "^6.7.0",
-    "sharp": "^0.29.1",
+    "sharp": "^0.29.2",
     "typescript": "^4.4.4"
   }
 }
