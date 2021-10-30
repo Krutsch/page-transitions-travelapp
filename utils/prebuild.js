@@ -22,9 +22,20 @@ glob("src/**/*.!(js|ts|html|css)", {}, (err, files) => {
   copyFiles(files.filter((f) => f.endsWith(".ico")));
   copyFiles(files.filter((f) => f.endsWith(".woff2")));
   jsonHandler(files.filter((f) => f.endsWith(".json")));
-  jpgHandler(files.filter((f) => f.endsWith(".jpg")));
-  pngHandler(files.filter((f) => f.endsWith(".png") && !f.includes("icon")));
-  copyFiles(files.filter((f) => f.endsWith(".png") && f.includes("icon")));
+  imgHandler(
+    files.filter((f) => f.endsWith(".jpg")),
+    ".jpg"
+  );
+  imgHandler(
+    files.filter((f) => f.endsWith(".png") && !f.includes("icon")),
+    ".png"
+  );
+  copyFiles(
+    files.filter(
+      (f) =>
+        f.endsWith("robots.txt") || (f.endsWith(".png") && f.includes("icon"))
+    )
+  );
 
   console.log(`🛠️  Pre-build finished.`);
 });
@@ -47,47 +58,24 @@ function copyFile(file) {
   copyFileSync(file, buildPath);
 }
 
-function jpgHandler(files) {
+function imgHandler(files, ext) {
   for (const file of files) {
     const buildPath = createDir(file);
     sharp(file)
-      .jpeg({
+      .webp({
         quality: 80,
       })
-      .toFile(buildPath)
+      .toFile(buildPath.replace(ext, ".webp"))
       .catch((err) => {
         console.error(err);
       });
 
     // Create Preview Image
     sharp(file)
-      .jpeg({
+      .webp({
         quality: 10,
       })
-      .toFile(toPreviewImage(file))
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-}
-function pngHandler(files) {
-  for (const file of files) {
-    const buildPath = createDir(file);
-    sharp(file)
-      .png({
-        quality: 80,
-      })
-      .toFile(buildPath)
-      .catch((err) => {
-        console.error(err);
-      });
-
-    // Create Preview Image
-    sharp(file)
-      .png({
-        quality: 10,
-      })
-      .toFile(toPreviewImage(file))
+      .toFile(toPreviewImage(file).replace(ext, ".webp"))
       .catch((err) => {
         console.error(err);
       });

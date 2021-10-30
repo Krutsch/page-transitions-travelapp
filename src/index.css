@@ -33,8 +33,8 @@
     &::after {
       @apply absolute w-0 h-0 overflow-hidden;
       z-index: -1;
-      content: url("/assets/header1.jpg") url("/assets/header2.jpg")
-        url("/assets/header3.jpg");
+      content: url("/assets/header1.webp") url("/assets/header2.webp")
+        url("/assets/header3.webp");
     }
   }
 
@@ -234,7 +234,7 @@
   }
 
   .index .header-img {
-    background: url("/assets/header1.jpg") center center / cover;
+    background: url("/assets/header1.webp") center center / cover;
   }
 
   .index .profile-photo {
@@ -245,11 +245,11 @@
 
   .place ~ [data-outlet] .main-img {
     @apply w-full h-60;
-    background: url("/assets/header1.jpg") center center / cover;
+    background: url("/assets/header1.webp") center center / cover;
   }
 
   .place .header-img {
-    background: url("/assets/header2.jpg") center center / cover;
+    background: url("/assets/header2.webp") center center / cover;
   }
 
   .place .follow {
@@ -277,7 +277,7 @@
 
   /* Group */
   .group .header-img {
-    background: url("/assets/header3.jpg") center center / cover no-repeat;
+    background: url("/assets/header3.webp") center center / cover no-repeat;
   }
 
   .group .profile-photo img {
@@ -285,23 +285,23 @@
   }
 
   .item1 {
-    background: url("/assets/hawaii1.jpg") center center / cover no-repeat;
+    background: url("/assets/hawaii1.webp") center center / cover no-repeat;
   }
 
   .item2 {
-    background: url("/assets/hawaii2.jpg") center center / cover no-repeat;
+    background: url("/assets/hawaii2.webp") center center / cover no-repeat;
   }
 
   .item3 {
-    background: url("/assets/hawaii3.jpg") center center / cover no-repeat;
+    background: url("/assets/hawaii3.webp") center center / cover no-repeat;
   }
 
   .item4 {
-    background: url("/assets/hawaii4.jpg") center center / cover no-repeat;
+    background: url("/assets/hawaii4.webp") center center / cover no-repeat;
   }
 
   .item5 {
-    background: url("/assets/hawaii5.jpg") center center / cover no-repeat;
+    background: url("/assets/hawaii5.webp") center center / cover no-repeat;
   }
 
   .group .follow {
@@ -380,6 +380,12 @@
 
   .rounded-50 {
     border-radius: 50%;
+  }
+
+  @media screen and (max-width: 310px) {
+    .follow {
+      @apply left-0;
+    }
   }
 
   @media screen and (max-width: 640px) {
