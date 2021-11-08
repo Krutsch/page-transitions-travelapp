@@ -21,7 +21,7 @@
     "workbox-strategies": "^6.3.0"
   },
   "devDependencies": {
-    "cssnano": "^5.0.9",
+    "cssnano": "^5.0.10",
     "cssnano-preset-advanced": "^5.1.6",
     "glob": "^7.2.0",
     "html-bundle": "^5.4.18",
