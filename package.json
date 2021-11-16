@@ -15,7 +15,7 @@
     "progressive-picture": "^2.0.4",
     "router-dom": "^2.2.6",
     "tailwindcss": "^2.2.19",
-    "workbox-cacheable-response": "^6.3.0",
+    "workbox-cacheable-response": "^6.4.1",
     "workbox-expiration": "^6.4.1",
     "workbox-routing": "^6.4.1",
     "workbox-strategies": "^6.4.1"
