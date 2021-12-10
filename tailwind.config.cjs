@@ -1,15 +1,7 @@
-const isProduction = process.env.NODE_ENV === "production";
-
 module.exports = {
-  mode: "jit",
-  purge: {
-    enabled: isProduction,
-    content: ["./src/**/*.html", "./src/**/*.css,", "./src/**/*.ts"],
-  },
-  darkMode: false,
+  content: ["./src/**/*.html", "./src/**/*.css", "./src/**/*.ts"],
   theme: {
     extend: {},
   },
-  variants: {},
   plugins: [],
 };
