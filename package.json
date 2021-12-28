@@ -21,7 +21,7 @@
   "devDependencies": {
     "cssnano": "^5.0.14",
     "cssnano-preset-advanced": "^5.1.9",
-    "html-bundle": "^6.0.0",
+    "html-bundle": "^6.0.1",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.4.5",
     "postcss-preset-env": "^7.1.0",
