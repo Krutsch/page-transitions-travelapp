@@ -83,17 +83,8 @@ $$(`.${startInvisible}`).forEach((elem) => {
 if (process.env.NODE_ENV !== "production") {
   addEventListener("afterRouting", () => {
     if (document.body.textContent!.includes("{{")) setBindings();
-    if (location.pathname === "/") $("header")!.classList.add("index");
     $$(`.${startInvisible}`).forEach((elem) => {
       elem.classList.remove(startInvisible);
-    });
-
-    $$("picture > img").forEach((img) => {
-      const src = (img as HTMLImageElement).dataset.src;
-      if (src) {
-        (img as HTMLImageElement).src = src;
-        img.removeAttribute("data-src");
-      }
     });
   });
 }
