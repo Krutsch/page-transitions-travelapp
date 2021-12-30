@@ -67,7 +67,7 @@
     }
 
     &::after {
-      @apply absolute inset-0;
+      @apply absolute inset-0 bg-black;
       content: "";
       z-index: -1;
     }
