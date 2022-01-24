@@ -26,12 +26,12 @@
   }
 
   body {
-    @apply text-gray-700 leading-tight overflow-x-hidden;
+    @apply overflow-x-hidden leading-tight text-gray-700;
     font-family: "Josefin Sans", serif;
     word-spacing: 1px;
 
     &::after {
-      @apply absolute w-0 h-0 overflow-hidden;
+      @apply absolute h-0 w-0 overflow-hidden;
       z-index: -1;
       content: url("/assets/header1.webp") url("/assets/header2.webp")
         url("/assets/header3.webp");
@@ -39,7 +39,7 @@
   }
 
   picture > img {
-    @apply block w-full h-auto blur-0;
+    @apply block h-auto w-full blur-0;
     transition: filter 0.4s ease;
 
     &[data-src] {
@@ -47,16 +47,16 @@
     }
   }
   [data-outlet] {
-    @apply content-between flex my-0 mx-auto max-w-[64rem] gap-[5%];
+    @apply my-0 mx-auto flex max-w-[64rem] content-between gap-[5%];
     will-change: opacity;
     min-height: calc(100vh - 300px - 44px);
   }
 
   header {
-    @apply relative w-screen h-[18.75rem];
+    @apply relative h-[18.75rem] w-screen;
 
     &::before {
-      @apply absolute z-10 inset-0 opacity-[0.6];
+      @apply absolute inset-0 z-10 opacity-[0.6];
       content: "";
       background: radial-gradient(
         ellipse at center,
@@ -83,7 +83,7 @@
     @apply list-none py-4;
 
     & li {
-      @apply inline-block mr-10;
+      @apply mr-10 inline-block;
     }
   }
 
@@ -98,7 +98,7 @@
   }
 
   footer {
-    @apply p-2.5 bg-black text-white text-center leading-6;
+    @apply bg-black p-2.5 text-center leading-6 text-white;
     letter-spacing: 0.03em;
 
     & a {
@@ -107,14 +107,14 @@
   }
 
   svg {
-    @apply inline-block align-baseline mb-[-3px];
+    @apply mb-[-3px] inline-block align-baseline;
     fill: #a8dadc;
   }
 }
 
 @layer components {
   .menudrawer {
-    @apply absolute text-right right-0 top-11 rounded p-5;
+    @apply absolute right-0 top-11 rounded p-5 text-right;
     transition: all 0.25s cubic-bezier(1, 0.5, 0.8, 1);
     background: rgba(0, 0, 0, 0.8);
     line-height: 1.8;
@@ -122,28 +122,28 @@
   }
 
   .hide-menu {
-    @apply opacity-0 pointer-events-none;
+    @apply pointer-events-none opacity-0;
     transform: scale(0.9);
   }
 
   header:not(.group) .profile-photo-secondary {
-    @apply opacity-0 pointer-events-none;
+    @apply pointer-events-none opacity-0;
   }
 
   .calendar,
   .map-pin {
-    @apply text-right absolute right-0 text-white top-64 opacity-0;
+    @apply absolute right-0 top-64 text-right text-white opacity-0;
     transition: 0.4s all ease-out;
   }
 
   .profile-photo,
   .profile-photo-secondary {
-    @apply absolute backface left-0 block w-[12.5rem] top-[9.375rem];
+    @apply backface absolute left-0 top-[9.375rem] block w-[12.5rem];
     transform: translateZ(0);
     transition: all 0.4s ease-out, opacity 0.1s ease-out;
 
     & img {
-      @apply cursor-pointer w-full;
+      @apply w-full cursor-pointer;
       transition: 0.4s all ease;
     }
   }
@@ -171,7 +171,7 @@
   }
 
   .follow {
-    @apply mb-2.5 cursor-pointer rounded py-1.5 px-2 text-white font-bold w-max absolute block top-80 backface left-[13.75rem] sm:w-[9.375rem];
+    @apply backface absolute top-80 left-[13.75rem] mb-2.5 block w-max cursor-pointer rounded py-1.5 px-2 font-bold text-white sm:w-[9.375rem];
     background-color: orangered;
     font-family: Arial;
     transform: translateZ(0);
@@ -184,31 +184,31 @@
   }
 
   .save-info {
-    @apply text-white absolute invisible text-right opacity-0 text-xl top-[12.125rem] right-[3.5rem];
+    @apply invisible absolute top-[12.125rem] right-[3.5rem] text-right text-xl text-white opacity-0;
   }
 
   .profile-name {
-    @apply absolute backface block text-4xl left-0 top-[22.1875rem];
+    @apply backface absolute left-0 top-[22.1875rem] block text-4xl;
     transition: all 0.4s ease-out;
     transform: translateZ(0);
     will-change: transform;
   }
 
   .side-icon {
-    @apply absolute right-0 block rounded-50 cursor-pointer top-[13.75rem] px-3 pt-3 pb-2;
+    @apply rounded-50 absolute right-0 top-[13.75rem] block cursor-pointer px-3 pt-3 pb-2;
     transition: 0.4s all ease-out;
     background: rgba(255, 255, 255, 0.3);
   }
 
   .header-img {
-    @apply absolute w-screen h-[18.75rem];
+    @apply absolute h-[18.75rem] w-screen;
     transition: transform 0.2s ease, opacity 0.2s ease;
     will-change: transform, opacity;
     contain: strict;
   }
 
   .nav-wrapper {
-    @apply w-screen relative px-5;
+    @apply relative w-screen px-5;
     z-index: 1000;
     background: rgba(4, 67, 98, 0.25);
   }
@@ -244,7 +244,7 @@
   /* Place */
 
   .place ~ [data-outlet] .main-img {
-    @apply w-full h-60;
+    @apply h-60 w-full;
     background: url("/assets/header1.webp") center center / cover;
   }
 
@@ -305,7 +305,7 @@
   }
 
   .group .follow {
-    @apply opacity-0 transition-none pointer-events-none;
+    @apply pointer-events-none opacity-0 transition-none;
   }
 
   .group .profile-photo {
@@ -327,7 +327,7 @@
   }
 
   .group .online {
-    @apply absolute rounded-50 right-0 bottom-0 w-10 h-10 z-10;
+    @apply rounded-50 absolute right-0 bottom-0 z-10 h-10 w-10;
     background: #07dc3c;
     border: 1px solid #000;
   }
@@ -375,7 +375,7 @@
   }
 
   .at-top {
-    @apply p-0 uppercase text-sm text-gray-600 mt-[1.875rem] pb-2.5;
+    @apply mt-[1.875rem] p-0 pb-2.5 text-sm uppercase text-gray-600;
   }
 
   .rounded-50 {
@@ -388,7 +388,7 @@
     }
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen(sm) {
     :not(.index) .side-icon {
       @apply px-3.5 pt-3.5 pb-3;
       transform: translate3d(0, -65px, 0);

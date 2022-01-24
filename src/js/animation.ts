@@ -111,7 +111,6 @@ export function openMenu() {
     x: -18,
     ease: Sine.easeOut,
   });
-  //@ts-ignore
   TweenMax.staggerTo(
     ".first, .middle, .last",
     0.2,
@@ -119,6 +118,7 @@ export function openMenu() {
       fill: "#7eebe6",
       ease: Sine.easeOut,
     },
+    //@ts-ignore
     0.04
   );
 }
