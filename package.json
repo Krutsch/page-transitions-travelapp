@@ -28,6 +28,6 @@
     "prettier-plugin-tailwindcss": "^0.1.8",
     "serve": "^13.0.2",
     "sharp": "^0.30.1",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.2"
   }
 }
