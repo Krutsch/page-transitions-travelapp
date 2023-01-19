@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "html-bundle --hmr --secure --handler utils/staticFiles.js",
+    "start": "html-bundle --hmr --secure --handler utils/staticFiles.js",
     "build": "html-bundle --isCritical --secure --handler utils/staticFiles.js",
     "serve": "serve build --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "preview": "npm run build && npm run serve",
@@ -11,7 +11,7 @@
     "gsap": "^3.11.4",
     "hydro-js": "^1.5.13",
     "progressive-picture": "^2.0.5",
-    "router-dom": "^2.2.9",
+    "router-dom": "^2.2.10",
     "tailwindcss": "^3.2.4",
     "workbox-cacheable-response": "^6.5.4",
     "workbox-expiration": "^6.5.4",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "cssnano": "^5.1.14",
     "cssnano-preset-advanced": "^5.3.9",
-    "html-bundle": "^6.0.14",
+    "html-bundle": "^6.0.16",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.4.21",
     "postcss-preset-env": "^7.8.3",
