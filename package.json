@@ -11,7 +11,7 @@
     "gsap": "^3.11.5",
     "hydro-js": "^1.5.14",
     "progressive-picture": "^2.0.5",
-    "router-dom": "^2.2.10",
+    "router-dom": "^2.2.11",
     "tailwindcss": "^3.3.2",
     "workbox-cacheable-response": "^6.5.4",
     "workbox-expiration": "^6.5.4",
@@ -21,11 +21,11 @@
   "devDependencies": {
     "cssnano": "^6.0.0",
     "cssnano-preset-advanced": "^6.0.0",
-    "html-bundle": "^6.0.16",
+    "html-bundle": "^6.0.17",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.4.23",
     "postcss-preset-env": "^8.3.2",
-    "prettier-plugin-tailwindcss": "^0.2.7",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "serve": "^14.2.0",
     "sharp": "^0.32.1",
     "typescript": "^5.0.4"
