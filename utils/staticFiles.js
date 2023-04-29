@@ -1,11 +1,4 @@
-import {
-  mkdirSync,
-  copyFileSync,
-  rmSync,
-  writeFileSync,
-  readFileSync,
-} from "fs";
-import { sep } from "path";
+import { mkdirSync, copyFileSync, writeFileSync, readFileSync } from "fs";
 import sharp from "sharp";
 import minifyJSON from "node-json-minify";
 
