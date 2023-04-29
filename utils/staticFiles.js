@@ -11,7 +11,7 @@ import minifyJSON from "node-json-minify";
 
 const SOURCE_FOLDER = "src";
 const BUILD_FOLDER = "build";
-const file = process.argv[2].replace(sep, "/");
+const file = process.argv[2];
 
 if (
   ["src/_headers", "src/_redirects"].includes(file) ||
