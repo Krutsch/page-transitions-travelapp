@@ -27,7 +27,7 @@
     "postcss-preset-env": "^9.0.0",
     "prettier-plugin-tailwindcss": "^0.4.0",
     "serve": "^14.2.0",
-    "sharp": "^0.32.2",
+    "sharp": "^0.32.3",
     "typescript": "^5.1.6"
   }
 }
