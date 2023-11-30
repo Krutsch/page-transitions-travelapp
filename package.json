@@ -8,7 +8,7 @@
     "update": "npx npm-check-updates -u && npm i && npm outdated"
   },
   "dependencies": {
-    "gsap": "^3.12.2",
+    "gsap": "^3.12.3",
     "hydro-js": "^1.5.14",
     "progressive-picture": "^2.0.5",
     "router-dom": "^2.2.11",
