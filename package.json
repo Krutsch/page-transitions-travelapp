@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "cssnano": "^6.0.2",
-    "cssnano-preset-advanced": "^6.0.2",
+    "cssnano-preset-advanced": "^6.0.3",
     "html-bundle": "^6.0.21",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.4.32",
