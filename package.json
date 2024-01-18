@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "html-bundle --hmr --secure --handler utils/staticFiles.js",
-    "build": "html-bundle --isCritical",
+    "build": "html-bundle --isCritical --handler utils/staticFiles.js",
     "serve": "serve build --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "preview": "npm run build && npm run serve",
     "update": "npx npm-check-updates -u && npm i && npm outdated"
