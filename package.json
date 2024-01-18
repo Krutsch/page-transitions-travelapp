@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "html-bundle --hmr --secure --handler utils/staticFiles.js",
-    "build": "html-bundle --isCritical --secure --handler utils/staticFiles.js",
+    "build": "html-bundle --isCritical",
     "serve": "serve build --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "preview": "npm run build && npm run serve",
     "update": "npx npm-check-updates -u && npm i && npm outdated"
@@ -21,13 +21,13 @@
   "devDependencies": {
     "cssnano": "^6.0.3",
     "cssnano-preset-advanced": "^6.0.3",
-    "html-bundle": "^6.0.21",
+    "html-bundle": "^6.0.22",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.4.33",
     "postcss-preset-env": "^9.3.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "serve": "^14.2.1",
-    "sharp": "0.32.6",
+    "sharp": "^0.33.2",
     "typescript": "^5.3.3"
   }
 }
