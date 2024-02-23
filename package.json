@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "gsap": "^3.12.5",
-    "hydro-js": "^1.5.17",
+    "hydro-js": "^1.5.18",
     "progressive-picture": "^2.0.5",
     "router-dom": "^2.2.11",
     "tailwindcss": "^3.4.1",
