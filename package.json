@@ -19,7 +19,7 @@
     "workbox-strategies": "^7.1.0"
   },
   "devDependencies": {
-    "cssnano": "^7.0.1",
+    "cssnano": "^7.0.2",
     "cssnano-preset-advanced": "^7.0.2",
     "html-bundle": "^6.1.2",
     "node-json-minify": "^3.0.0",
