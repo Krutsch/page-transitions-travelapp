@@ -24,7 +24,7 @@
     "html-bundle": "^6.1.2",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.4.39",
-    "postcss-preset-env": "^9.5.15",
+    "postcss-preset-env": "^9.6.0",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "serve": "^14.2.3",
     "sharp": "^0.33.4",
