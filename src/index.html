@@ -27,16 +27,13 @@
     <link rel="apple-touch-icon" href="assets/icon192.png" />
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#24272d" />
-    <script
-      type="module"
-      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
-      async
-    ></script>
 
-    <script type="module">
+    <script type="module" nonce="8IBTHwOdqNKAWeKl7plt8g==">
       import { hydro } from "hydro-js";
 
-      if (navigator.serviceWorker) navigator.serviceWorker.register("sw.js");
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("sw.js", { type: "module" });
+      }
 
       hydro.persons = [
         {
@@ -66,8 +63,16 @@
       ];
       hydro.person = { ...hydro.persons[0] };
     </script>
-    <script type="module" src="js/router.js"></script>
-    <script type="module" src="js/setReactivity.js"></script>
+    <script
+      type="module"
+      src="js/router.js"
+      nonce="8IBTHwOdqNKAWeKl7plt8g=="
+    ></script>
+    <script
+      type="module"
+      src="js/setReactivity.js"
+      nonce="8IBTHwOdqNKAWeKl7plt8g=="
+    ></script>
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
