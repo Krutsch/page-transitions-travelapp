@@ -23,7 +23,7 @@
     "cssnano-preset-advanced": "^7.0.6",
     "html-bundle": "^6.1.8",
     "node-json-minify": "^3.0.0",
-    "postcss": "^8.4.48",
+    "postcss": "^8.4.49",
     "postcss-preset-env": "^10.0.9",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "serve": "^14.2.4",
