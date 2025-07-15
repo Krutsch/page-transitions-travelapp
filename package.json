@@ -22,7 +22,7 @@
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^24.0.13",
     "cssnano": "^7.0.7",
-    "cssnano-preset-advanced": "^7.0.7",
+    "cssnano-preset-advanced": "^7.0.8",
     "html-bundle": "^6.2.0",
     "node-json-minify": "^3.0.0",
     "postcss": "^8.5.6",
