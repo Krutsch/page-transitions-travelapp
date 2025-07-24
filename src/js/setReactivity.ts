@@ -1,6 +1,8 @@
-import "progressive-picture";
+import { observe } from "progressive-picture";
 import { setReactivity, $, $$, hydro } from "hydro-js";
 import { openMenu, closeMenu } from "./animation.js";
+
+observe();
 
 const headerImg = $(".header-img")!;
 const followElem = $(".follow")!;
