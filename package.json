@@ -19,7 +19,7 @@
     "workbox-strategies": "^7.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.0",
     "cssnano": "^7.1.2",
     "cssnano-preset-advanced": "^7.0.10",
