@@ -11,7 +11,11 @@ const menuDrawer = $(".menudrawer")!;
 
 let isOpen = false;
 
-setBindings();
+const canBindReactiveDOM = () => Boolean(hydro.person && hydro.persons);
+const scheduleBindings = () =>
+  canBindReactiveDOM() ? setBindings() : requestAnimationFrame(scheduleBindings);
+
+scheduleBindings();
 
 function setBindings() {
   setReactivity(document.body, {
@@ -84,7 +88,9 @@ $$(`.${startInvisible}`).forEach((elem) => {
 // Listener for HMR
 if (process.env.NODE_ENV !== "production") {
   addEventListener("afterRouting", () => {
-    if (document.body.textContent!.includes("{{")) setBindings();
+    if (document.body.textContent!.includes("{{") && canBindReactiveDOM()) {
+      setBindings();
+    }
     $$(`.${startInvisible}`).forEach((elem) => {
       elem.classList.remove(startInvisible);
     });
