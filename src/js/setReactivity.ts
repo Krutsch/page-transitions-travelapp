@@ -13,7 +13,9 @@ let isOpen = false;
 
 const canBindReactiveDOM = () => Boolean(hydro.person && hydro.persons);
 const scheduleBindings = () =>
-  canBindReactiveDOM() ? setBindings() : requestAnimationFrame(scheduleBindings);
+  canBindReactiveDOM()
+    ? setBindings()
+    : requestAnimationFrame(scheduleBindings);
 
 scheduleBindings();
 
@@ -86,6 +88,7 @@ $$(`.${startInvisible}`).forEach((elem) => {
 });
 
 // Listener for HMR
+// @ts-ignore
 if (process.env.NODE_ENV !== "production") {
   addEventListener("afterRouting", () => {
     if (document.body.textContent!.includes("{{") && canBindReactiveDOM()) {
