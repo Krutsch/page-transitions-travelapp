@@ -31,7 +31,7 @@
     <script type="module" nonce="8IBTHwOdqNKAWeKl7plt8g==">
       import { hydro } from "hydro-js";
 
-      if (navigator.serviceWorker) {
+      if (navigator.serviceWorker && process.env.NODE_ENV === "production") {
         navigator.serviceWorker.register("sw.js", { type: "module" });
       }
 
