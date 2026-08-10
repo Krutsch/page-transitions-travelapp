@@ -10,7 +10,7 @@
   "dependencies": {
     "gsap": "^3.15.0",
     "hydro-js": "^1.9.4",
-    "progressive-picture": "^3.2.0",
+    "progressive-picture": "^3.2.1",
     "router-dom": "^3.3.0",
     "tailwindcss": "^4.3.3",
     "workbox-cacheable-response": "^7.4.1",
