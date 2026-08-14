@@ -2,6 +2,14 @@ import Router from "router-dom";
 import { $$, $, render, hydro, setReactivity } from "hydro-js";
 import { addPlace } from "./animation.js";
 
+addEventListener("pagehide", () => {
+  const currentUrl = `${location.pathname}${location.search}`;
+  sessionStorage.setItem(
+    `router-scroll-${currentUrl}`,
+    `${scrollX} ${scrollY}`,
+  );
+});
+
 const mailIcon = ($("#mailIcon") as HTMLTemplateElement).content.cloneNode(
   true,
 ).firstChild;
