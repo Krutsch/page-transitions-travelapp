@@ -32,7 +32,20 @@
       import { hydro } from "hydro-js";
 
       if (navigator.serviceWorker && process.env.NODE_ENV === "production") {
-        navigator.serviceWorker.register("sw.js", { type: "module" });
+        const hadController = Boolean(navigator.serviceWorker.controller);
+        let refreshing = false;
+
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (!hadController || refreshing) return;
+
+          refreshing = true;
+          location.reload();
+        });
+
+        navigator.serviceWorker.register("/sw.js", {
+          type: "module",
+          updateViaCache: "none",
+        });
       }
 
       hydro.persons = [

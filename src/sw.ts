@@ -1,51 +1,53 @@
 import { registerRoute } from "workbox-routing";
-import {
-  NetworkFirst,
-  StaleWhileRevalidate,
-  CacheFirst,
-} from "workbox-strategies";
+import { CacheFirst, NetworkOnly } from "workbox-strategies";
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { ExpirationPlugin } from "workbox-expiration";
 
-// Cache documents with NetworkFirst
-registerRoute(
-  ({ request }) =>
+const MEDIA_CACHE = "travelapp-media-v1";
+const LEGACY_CACHES = new Set(["pages", "assets", "images"]);
+const serviceWorker = self as unknown as ServiceWorkerGlobalScope;
+
+serviceWorker.addEventListener("install", (event) => {
+  event.waitUntil(serviceWorker.skipWaiting());
+});
+
+serviceWorker.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((cacheNames) =>
+        Promise.all(
+          cacheNames
+            .filter(
+              (cacheName) =>
+                LEGACY_CACHES.has(cacheName) ||
+                (cacheName.startsWith("travelapp-") &&
+                  cacheName !== MEDIA_CACHE),
+            )
+            .map((cacheName) => caches.delete(cacheName)),
+        ),
+      )
+      .then(() => serviceWorker.clients.claim()),
+  );
+});
+
+// Never serve deploy-coupled documents or code from an old deployment.
+registerRoute(({ request }) => {
+  const pathname = new URL(request.url).pathname;
+
+  return (
     request.mode === "navigate" ||
-    (request.destination === "" &&
-      (request.url.endsWith("/") || request.url.endsWith(".html"))),
-  new NetworkFirst({
-    cacheName: "pages",
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [200],
-      }),
-    ],
-  })
-);
+    ["script", "style", "worker"].includes(request.destination) ||
+    (request.destination === "" && /\.(html|js|css)$/.test(pathname))
+  );
+}, new NetworkOnly());
 
-// Cache assets with StaleWhileRevalidate
-registerRoute(
-  ({ request }) =>
-    request.url.includes(".js") ||
-    request.destination === "style" ||
-    request.destination === "script" ||
-    request.destination === "worker",
-  new StaleWhileRevalidate({
-    cacheName: "assets",
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [200],
-      }),
-    ],
-  })
-);
-
-// Cache images with CacheFirst and 7 days expiration time
+// Cache media only; media can safely survive application deploys.
 registerRoute(
   ({ request }) =>
     request.destination === "image" || request.destination === "font",
   new CacheFirst({
-    cacheName: "images",
+    cacheName: MEDIA_CACHE,
     plugins: [
       new CacheableResponsePlugin({
         statuses: [200],
@@ -55,5 +57,5 @@ registerRoute(
         maxAgeSeconds: 60 * 60 * 24 * 7,
       }),
     ],
-  })
+  }),
 );

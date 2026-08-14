@@ -3,10 +3,10 @@ import { $$, $, render, hydro, setReactivity } from "hydro-js";
 import { addPlace } from "./animation.js";
 
 const mailIcon = ($("#mailIcon") as HTMLTemplateElement).content.cloneNode(
-  true
+  true,
 ).firstChild;
 const plusIcon = ($("#plusIcon") as HTMLTemplateElement).content.cloneNode(
-  true
+  true,
 ).firstChild;
 setReactivity(plusIcon as Element, { addPlace });
 
@@ -34,7 +34,7 @@ new Router(
         $("header")!.className = "index";
         return hideOrShow(false);
       },
-      restoreScrollOnReload: true,
+      restoreScroll: true,
     },
     {
       path: "/place",
@@ -53,14 +53,14 @@ new Router(
         $("header")!.className = "place";
         return hideOrShow(false);
       },
-      restoreScrollOnReload: true,
+      restoreScroll: true,
     },
     {
       path: "/group",
       templateUrl: "/pages/group.html",
       leave() {
         ($(".profile-photo") as HTMLDivElement).style.removeProperty(
-          "transform"
+          "transform",
         );
         return hideOrShow(true);
       },
@@ -73,10 +73,10 @@ new Router(
         $("header")!.className = "group";
         return hideOrShow(false);
       },
-      restoreScrollOnReload: true,
+      restoreScroll: true,
     },
   ],
-  { scrollBehavior: "smooth" }
+  { scrollBehavior: "smooth" },
 );
 
 const headerImg = $(".header-img")!;
@@ -92,6 +92,6 @@ function hideOrShow(hide: boolean) {
       duration: 190,
       fill: "forwards",
       easing: "ease-in",
-    }
+    },
   ).finished;
 }
