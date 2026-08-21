@@ -32,11 +32,10 @@
       import { hydro } from "hydro-js";
 
       if (navigator.serviceWorker && process.env.NODE_ENV === "production") {
-        const hadController = Boolean(navigator.serviceWorker.controller);
         let refreshing = false;
 
         navigator.serviceWorker.addEventListener("controllerchange", () => {
-          if (!hadController || refreshing) return;
+          if (refreshing) return;
 
           refreshing = true;
           location.reload();
