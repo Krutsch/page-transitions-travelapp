@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.2.0",
+    "@types/node": "^26.3.0",
     "cssnano": "^8.0.8",
     "cssnano-preset-advanced": "^8.0.8",
     "html-bundle": "^6.6.4",
