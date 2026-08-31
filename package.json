@@ -21,7 +21,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^26.4.0",
-    "cssnano": "^8.0.8",
+    "cssnano": "^9.0.0",
     "cssnano-preset-advanced": "^9.0.0",
     "html-bundle": "^6.6.4",
     "node-json-minify": "^3.0.0",
