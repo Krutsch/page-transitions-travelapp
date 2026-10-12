@@ -23,7 +23,7 @@
     "@types/node": "^26.6.4",
     "cssnano": "^9.3.2",
     "cssnano-preset-advanced": "^9.2.2",
-    "html-bundle": "^6.6.5",
+    "html-bundle": "^6.7.0",
     "node-json-minify": "^3.0.0",
     "parse5": "^8.0.1",
     "postcss": "^8.5.29",
