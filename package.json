@@ -4,32 +4,31 @@
     "start": "html-bundle --hmr --secure --handler utils/staticFiles.js",
     "build": "html-bundle --isCritical --handler utils/staticFiles.js && node utils/generate-csp-hashes.ts",
     "serve": "serve build --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "preview": "npm run build && npm run serve",
-    "update": "npx npm-check-updates -u && npm i && npm outdated"
+    "preview": "npm run build && npm run serve"
   },
   "dependencies": {
     "gsap": "^3.15.1",
-    "hydro-js": "^1.10.2",
+    "hydro-js": "^1.10.3",
     "progressive-picture": "^3.2.3",
     "router-dom": "^3.3.9",
-    "tailwindcss": "^4.3.4",
+    "tailwindcss": "^4.3.5",
     "workbox-cacheable-response": "^7.4.1",
     "workbox-expiration": "^7.4.1",
     "workbox-routing": "^7.4.1",
     "workbox-strategies": "^7.4.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.4",
+    "@tailwindcss/postcss": "^4.3.5",
     "@types/node": "^26.6.6",
     "cssnano": "^9.9.0",
     "cssnano-preset-advanced": "^10.0.0",
     "html-bundle": "^6.7.0",
     "node-json-minify": "^3.0.0",
-    "parse5": "^8.1.0",
+    "parse5": "^8.1.1",
     "postcss": "^8.5.32",
     "postcss-preset-env": "^11.6.2",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "serve": "^14.2.6",
+    "serve": "^14.2.7",
     "sharp": "^0.35.5",
     "typescript": "^7.0.2"
   },
