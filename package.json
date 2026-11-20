@@ -10,7 +10,7 @@
     "gsap": "^3.15.1",
     "hydro-js": "^1.10.3",
     "progressive-picture": "^3.2.3",
-    "router-dom": "^3.3.9",
+    "router-dom": "^3.3.10",
     "tailwindcss": "^4.3.5",
     "workbox-cacheable-response": "^7.4.1",
     "workbox-expiration": "^7.4.1",
